@@ -6,7 +6,7 @@
  */
 package com.nitin.algo;
 
-public class AddSearchWordTrie {
+public class RegexSearchWordTrie {
 	
 	public static void main(String[] args) {
 		
