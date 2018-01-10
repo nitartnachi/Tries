@@ -7,7 +7,7 @@ package com.nitin.algo;
 public class LexographicSortingStrings {
 
 	private static TrieNode root;
-	private static final int SIZE = 26;
+	private static final int SIZE = 27;
 
 	public LexographicSortingStrings() {
 		root  = new TrieNode();
@@ -25,7 +25,7 @@ public class LexographicSortingStrings {
 		TrieNode node = root;
 		for(int i = 0; i < word.length(); i++) {
 			char c = word.charAt(i);
-			int index = c - 'a';
+			int index = (c - 'a' >= 0) ? c - 'a' : 26; //setting 26 for space
 			if(node.children[index] == null) {
 				TrieNode temp = new TrieNode();
 				node.children[index] = temp;
@@ -52,7 +52,7 @@ public class LexographicSortingStrings {
 
 	public static void main(String[] args) {
 		new LexographicSortingStrings();
-		String[] arr = {"lexo", "champ", "zest", "pest", "pet", "peta", "zen", "pea", "peet", "peter", "zee"};
+		String[] arr = {"lexo", "champ", "zest", "pest", "pet", "peta", "zen", "pea", "peet", "peter", "zee", "san francisco", "san ramon", "santa clara", "albany", "sunnyvale", "houston", "san jose"};
 		for(String word : arr)
 			insert(word);
 		preOrder(root);	
