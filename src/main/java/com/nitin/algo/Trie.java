@@ -7,6 +7,7 @@ package com.nitin.algo;
 
 public class Trie {
 	private static TrieNode root;
+	private static final int SIZE = 26;
 	
 	public Trie(){
 		root = new TrieNode();
@@ -17,7 +18,7 @@ public class Trie {
 		boolean isLeaf;
 		
 		public TrieNode() {
-			children = new TrieNode[26];
+			children = new TrieNode[SIZE];
 		}
 	}
 	
