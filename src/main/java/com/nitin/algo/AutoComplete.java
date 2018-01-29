@@ -60,8 +60,7 @@ public class AutoComplete {
 			if(node.children[i] != null) {
 				if(node.children[i].word != null)
 					list.add(node.children[i].word);
-				else
-					traverse(node.children[i], list);
+				traverse(node.children[i], list);
 			}
 		}
 	}
@@ -79,7 +78,7 @@ public class AutoComplete {
 		
 		public static void main(String[] args) {
 			new AutoComplete();
-			String[] cities = {"san francisco", "san ramon", "santa clara", "albany", "sunnyvale", "houston", "san jose"};
+			String[] cities = {"san francisco", "san ramon", "san ramons", "santa clara", "albany", "sunnyvale", "houston", "san jose"};
 			for(String city : cities)
 				insert(city);
 			System.out.println("The cities are : " + autoComplete("san ").toString());
